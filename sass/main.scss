@@ -1,0 +1,498 @@
+$icon-font-path: "../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap-sprockets";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
+  src: url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), 
+       url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), 
+       url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), 
+       url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), 
+       url("../bower_components/bootstrap-sass/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); 
+}
+
+@font-face {
+  font-family: 'museo300';
+  src: url('../fonts/Museo300-Regular-webfont.eot');
+  src: url('../fonts/Museo300-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/Museo300-Regular-webfont.woff2') format('woff2'),
+       url('../fonts/Museo300-Regular-webfont.woff') format('woff'),
+       url('../fonts/Museo300-Regular-webfont.ttf') format('truetype'),
+       url('../fonts/Museo300-Regular-webfont.svg#museo300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*============================================================================
+  Variables and helper functions
+==============================================================================*/
+$cota: #BDBBB5;
+$navy: #1B2531;
+$blue-gray: #555F6F;
+$serif: "Times New Roman", serif;
+$museo: 'museo300';
+
+@mixin layout {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+
+  @media (min-width: 1024px) {
+    max-width: 1200px;
+  }
+}
+
+@function rem($divisor) {
+  @return $divisor / 16 * 1rem;
+}
+
+@function col($width) {
+  @return $width / 12 * 100%;
+}
+
+@function animate($prop: all) {
+  @return $prop 0.25s ease-in;
+}
+
+/*============================================================================
+  Basic Styling
+==============================================================================*/
+body, html {
+  font-size: 16px;
+}
+
+body {
+  font-family: $serif;
+  line-height: 1.25rem;
+
+  @media (max-width: 768px) {
+    padding-top: 100px;
+  }
+}
+
+p {
+  font-family: $museo;
+}
+
+a {
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+@for $i from 1 through 3 {
+  h#{$i} {
+    font-family: $serif;
+    text-transform: uppercase;
+  }
+}
+
+.form-control {
+  font-family: $museo;
+  font-size: rem(18);
+  background-color: $cota;
+  color: #fff;
+  padding: 5px;
+  border-radius: 0px;
+}
+
+.error {
+  padding-top: 7px;
+}
+
+.btn {
+  line-height: 2rem;
+  border-radius: 0px;
+  font-size: rem(18);
+  color: #fff;
+  border: solid 2px #fff;
+  text-transform: uppercase;
+  font-weight: normal;
+  transition: animate(color);
+
+  &:hover {
+    color: rgba(255, 255, 255, 0.75);
+  }
+}
+
+.btn-primary {
+  background-color: $navy;
+}
+
+.btn-secondary {
+  background-color: $navy;
+}
+
+.btn-tertiary {
+  background-color: #000;
+}
+
+.container {
+  @include layout;
+}
+
+/* Disables the -15px marigins */
+.row {
+  margin: 0;
+}
+
+.hover-tile {
+  position: relative;
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $navy;
+    color: #fff;
+    opacity: 0;
+    transition: animate(opacity);
+    padding: 15px 30px;
+
+    h3 {
+      margin-bottom: 30px;
+    }
+
+    .read-more {
+      color: #fff;
+      text-transform: uppercase;
+    }
+  }
+
+  &.active .overlay {
+    opacity: 1;
+  }
+}
+
+/*============================================================================
+  Site Navigation
+==============================================================================*/
+.navbar {
+  height: 100px;
+  padding: 0;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.75);
+  border-color: transparent;
+
+  .navbar-header {
+    min-height: 100px;
+  }
+
+  .navbar-brand {
+    max-width: 300px;
+    height: auto;
+    padding: 0;
+    padding: 15px 0 0 30px;
+
+    img {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      max-width: 260px;
+    }
+  }
+
+  .navbar-toggle {
+    border-color: #888;
+    margin: 30px 30px 0 0;
+  }
+
+  #navbar {
+    font-family: $serif;
+    text-transform: uppercase;
+    margin: 18px 15px;
+
+    .navbar-nav {
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      background-color: #fff;
+      width: 100%;
+      margin: -2px 0;
+      padding: 0;
+
+      .container > .navbar-collapse {
+        margin: 0;
+      }
+
+      li {
+        border-bottom: solid 1px #666;
+
+        a:hover {
+          background-color: $navy;
+          color: #fff;
+        }
+      }
+    }
+
+    a, a:hover {
+      color: #000;
+    }
+
+    .active {
+      a {
+        background-color: transparent;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Carousel Sections
+==============================================================================*/
+.carousel {
+  @include layout;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .carousel-control {
+    width: 5%;
+  }
+
+  .carousel-indicators {
+    width: auto;
+    right: 20px;
+    left: auto;
+    margin: 0;
+
+    li {
+      display: block;
+      margin-bottom: 7px;
+
+      .active {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Overview Sections !Could also make into info blocks for non-homepage
+==============================================================================*/
+.overview {
+  .col-md-6 {
+    padding: 15px 45px;
+    min-height: 125px;
+
+    h2 {
+      font-size: rem(30);
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: 1.5rem;
+    }
+
+    &:nth-child(1) {
+      background-color: $navy;
+      color: $cota;
+    }
+
+    &:nth-child(2) {
+      background-color: $cota;
+      color: $navy;
+    }
+
+    &:nth-child(3) {
+      background-color: $blue-gray;
+      color: $cota;
+    }
+
+    &:nth-child(4) {
+      background-color: #000;
+      color: $cota;
+    }
+
+    & .home {
+      @media (min-width: 768px) {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Enquiries
+==============================================================================*/
+.enquiries {
+  .col-md-6 {
+    padding: 15px 45px;
+    min-height: 250px;
+
+    h2 {
+      font-size: rem(30);
+      margin-bottom: 30px;
+    }
+
+    p {
+      font-size: rem(16);
+      line-height: 1.5rem;
+    }
+
+    .btn {
+      width: 100%;
+    }
+
+    &:nth-child(1) {
+      background-color: $navy;
+      color: $cota;
+    }
+
+    &:nth-child(2) {
+      background-color: #000;
+      color: $cota;
+    }
+
+    & .services {
+      @media (min-width: 768px) {
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Features Sections
+==============================================================================*/
+.features {
+  .col-md-4 {
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/*============================================================================
+  About Sections
+==============================================================================*/
+.about {
+  padding: 45px 30px;
+
+  img[alt="signature"] {
+    margin-top: 30px;
+  }
+
+  .col-md-5 {
+    padding: 15px;
+
+    img {
+      width: 100%;
+    }
+  }
+}
+
+/*============================================================================
+  Contact Sections
+==============================================================================*/
+.contact .container {
+  background-size: cover;
+  padding: 45px;
+
+  .home & {
+    background-image: url(../img/contact-bg.jpg);
+  }
+
+  .about-us & {
+    background-image: url(../img/about-contact-bg.jpg); 
+  }
+
+  .services & {
+    background-image: url(../img/services-contact-bg.jpg);  
+  }
+
+  .villa & {
+    background-image: url(../img/villa-contact-bg.jpg);  
+  }
+
+  .form-container {
+    background-color: #fff;
+    padding: 15px 30px;
+
+    .btn-primary {
+      width: 100%;
+    }
+
+    form {
+
+      [type="submit"] {
+        font-family: $museo;
+        border-width: 0px;
+
+        &:hover {
+          background-color: $navy;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) {
+      float: right;
+      width: col(5);
+    }
+  }
+}
+
+/*============================================================================
+  Footer
+==============================================================================*/
+footer {
+  padding: 15px;
+
+  small {
+    text-transform: uppercase;
+    float: left;
+    padding: 30px 0;
+  }
+
+  ul {
+    float: right;
+
+    li {
+      display: inline-block;
+      list-style-type: none;
+      transition: animate(opacity);
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  About page styles
+==============================================================================*/
+.about-us {
+  .about {
+    .col-md-6 {
+      padding: 0;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/*============================================================================
+  Services page styles
+==============================================================================*/
+
+
+

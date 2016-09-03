@@ -1,26 +1,5 @@
 <?php /* Template Name: Services Template */ ?>
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Residence</title>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/css/main.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body class="services">
+  <?php get_header(); ?>
 
     <!-- TODO: Carousel weird layout issue
     ================================================== -->
@@ -158,40 +137,10 @@
       </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer>
-      <div class="container">
-        <ul>
-          <li>
-            <a href="">
-              <img src="<?php bloginfo('template_url'); ?>/img/fb-share.png" alt="">
-            </a>
-          </li>
-           <li>
-            <a href="">
-              <img src="<?php bloginfo('template_url'); ?>/img/twitter-share.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="<?php bloginfo('template_url'); ?>/img/instagram-share.png" alt="">
-            </a>
-          </li>
-          <li>
-            <a href="">
-              <img src="<?php bloginfo('template_url'); ?>/img/linkedin-share.png" alt="">
-            </a>
-          </li>
-        </ul>
-        <small>&copy; Copyright In Residence 2016. All rights reserved.</small>
-      </div>
-    </footer>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('body').addClass('services');
+      });
+    </script>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
-    <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
-  </body>
-</html>
+<?php get_footer(); ?>

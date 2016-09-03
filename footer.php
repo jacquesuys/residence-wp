@@ -10,25 +10,37 @@
  */
 ?>
 
-	</div><!-- .site-content -->
+	 <!-- FOOTER -->
+    <footer>
+      <div class="container">
+        <ul>
+          <li>
+            <a href="">
+              <img src="<?php bloginfo('template_url'); ?>/img/fb-share.png" alt="">
+            </a>
+          </li>
+           <li>
+            <a href="">
+              <img src="<?php bloginfo('template_url'); ?>/img/twitter-share.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="<?php bloginfo('template_url'); ?>/img/instagram-share.png" alt="">
+            </a>
+          </li>
+          <li>
+            <a href="">
+              <img src="<?php bloginfo('template_url'); ?>/img/linkedin-share.png" alt="">
+            </a>
+          </li>
+        </ul>
+        <small>&copy; Copyright In Residence 2016. All rights reserved.</small>
+      </div>
+    </footer>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php
-				/**
-				 * Fires before the Twenty Fifteen footer text for footer customization.
-				 *
-				 * @since Twenty Fifteen 1.0
-				 */
-				do_action( 'twentyfifteen_credits' );
-			?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'twentyfifteen' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'twentyfifteen' ), 'WordPress' ); ?></a>
-		</div><!-- .site-info -->
-	</footer><!-- .site-footer -->
-
-</div><!-- .site -->
-
-<?php wp_footer(); ?>
-
-</body>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="<?php bloginfo('template_url'); ?>/js/bootstrap.min.js"></script>
+    <script src="<?php bloginfo('template_url'); ?>/js/main.js"></script>
+  </body>
 </html>

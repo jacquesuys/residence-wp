@@ -67,7 +67,7 @@
 
             <p>After all, we believe that, to be enjoyed to the full, life should be effortless. Don’t you?</p>
 
-            <img src="<?php bloginfo('template_url'); ?>/img/signature.gif" alt="signature">
+            <img src="<?php bloginfo('template_url'); ?>/img/signature.png" alt="signature">
           </div>
         </div>
         <div class="row">
@@ -131,7 +131,7 @@
 
     <script type="text/javascript">
       $(document).ready(function(){
-        $('body').addClass('about');
+        $('body').addClass('about-us');
       });  
     </script>
 

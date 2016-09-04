@@ -406,7 +406,7 @@ img {
   padding: 45px;
 
   .home & {
-    background-image: url(../img/contact-bg.jpg);
+    background-image: url(../img/home-bg.jpg);
   }
 
   .about-us & {
@@ -419,6 +419,11 @@ img {
 
   .villa & {
     background-image: url(../img/villa-contact-bg.jpg);  
+  }
+
+  .contact-us &  {
+    padding-top: 140px;
+    background-image: url(../img/contact-bg.jpg);
   }
 
   .form-container {
@@ -491,8 +496,17 @@ footer {
 }
 
 /*============================================================================
-  Services page styles
+  Contact Us
 ==============================================================================*/
+.contact-us {
+  .about {
+    padding: 0;
 
+    .container {
+        padding: 30px;
+        background-color: $cota;
+      }
+  }
+}
 
 

@@ -106,7 +106,9 @@ $(document).ready(function(){
 
   tiles();
 
-  $(window).on('resize', tiles);
+  $(window).on('resize', function(){
+    tiles();
+  });
 
   // Hover tiles for homepage
   $('.hover-tile').on({
